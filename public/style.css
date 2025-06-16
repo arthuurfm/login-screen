@@ -39,6 +39,8 @@ body {
   align-items: center;
   padding: 24px;
   text-align: center;
+  left: 0;
+  transition: left 0.5s ease-in-out;
 }
 
 /* ao arrastar o mouse */
@@ -81,6 +83,8 @@ body {
   justify-content: center;
   align-items: center;
   color: #35a07a;
+  left: 40%;
+  transition: left 0.5s ease-in-out;
 }
 
 .form-container::selection {
@@ -171,43 +175,59 @@ body {
 }
 
 /* slide */
-.welcome-register {
+.welcome-sign-up {
   z-index: 2;
   opacity: 1;
   left: 0;
-  transition: left 0.5s ease-in-out;
 }
 
-.welcome-login {
+.welcome-sign-up.hide {
   opacity: 0;
+  z-index: 1;
+}
+
+.welcome-sign-in {
+  opacity: 1;
+  z-index: 2;
+}
+
+.welcome-sign-in.hide {
+  opacity: 0;
+  z-index: 1;
 }
 
 .sign-up-container {
-  right: 0;
   z-index: 2;
-  left: 40%;
-  transition: left 0.5s ease-in-out;
+}
+
+.sign-up-container.hide {
+  opacity: 0;
+  z-index: 1;
 }
 
 .sign-in-container {
-  right: 0;
+  z-index: 2;
+  opacity: 1;
+}
+
+.sign-in-container.hide {
   opacity: 0;
   z-index: 1;
 }
 
 /* quando sign in é clicado */
-.container.active .welcome-register {
+.container.active .welcome-container {
   left: 60%;
 }
 
-.welcome-register.hidden > * {
+.welcome-container.hidden > * {
   opacity: 0;
 }
 
-.container.active .sign-up-container {
+.container.active .form-container {
   left: 0;
 }
 
-.sign-up-container.hidden {
+.form-container.hidden > * {
   opacity: 0;
 }

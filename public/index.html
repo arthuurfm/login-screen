@@ -12,7 +12,7 @@
       <h1>Welcome to our site!</h1>
       <p>
         If you already have an account, 
-        click in sign in!
+        click in <b>sign in</b>.
       </p>
       <button class="sign-in-btn">SIGN IN</button>
     </div>
@@ -21,7 +21,7 @@
       <h1>Welcome back to our site!</h1>
       <p>
         If you don't have an account, 
-        click in sign up!
+        click in <b>sign up</b>.
       </p>
       <button class="sign-up-btn">SIGN UP</button>
     </div>
@@ -36,21 +36,37 @@
       <p>or use your email to registration:</p>
       <div class="input-area">
         <img src="./img/user-icon.png">
-        <input type="text" placeholder="Username">
+        <input id="username" type="text" placeholder="Username" required>
+        <div class="input-error">
+          <div></div>
+          <span></span>
+        </div>
       </div>
-      <div class="input-area">
+      <div class="input-area input-email">
         <img src="./img/email-icon.png">
-        <input type="text" placeholder="Email">
+        <input id="email" type="email" placeholder="Email" required>
+        <div class="input-error">
+          <div></div>
+          <span></span>
+        </div>
       </div>
-      <div class="input-area">
+      <div class="input-area input-password">
         <img src="./img/padlock-icon.png">
-        <input type="text" placeholder="Password">
+        <input id="password" type="password" placeholder="Password" required>
+        <div class="input-error">
+          <div></div>
+          <span></span>
+        </div>
       </div>
-      <div class="input-area">
+      <div class="input-area input-confirm-password">
         <img src="./img/padlock-icon.png">
-        <input type="text" placeholder="Confirm Password">
+        <input id="confirm-password" type="password" placeholder="Confirm Password" required>
+        <div class="input-error">
+          <div></div>
+          <span></span>
+        </div>
       </div>
-      <button>SIGN UP</button>
+      <button type="submit">SIGN UP</button>
     </div>
 
     <div class="form-container sign-in-container hide">
@@ -69,7 +85,7 @@
         <img src="./img/padlock-icon.png">
         <input type="text" placeholder="Password">
       </div>
-      <button>SIGN UP</button>
+      <button>SIGN IN</button>
     </div>
 
   </div>

@@ -35,7 +35,7 @@ export default function slideControl() {
       formSignUp.classList.remove('hidden');
       welcomeSignUp.classList.remove('hidden');
       showSignIn();
-    }, 520);
+    }, 450);
   });
 
   // ao clicar no botão de sign up.
@@ -48,6 +48,6 @@ export default function slideControl() {
       formSignIn.classList.remove('hidden');
       welcomeSignIn.classList.remove('hidden');
       showSignUp();
-    }, 550);
+    }, 450);
   });
 }

@@ -242,6 +242,7 @@ body {
 }
 
 /* validação do formulário de registro */
+.input-username.invalid,
 .input-email.invalid, 
 .input-password.invalid, 
 .input-confirm-password.invalid {

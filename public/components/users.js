@@ -1,4 +1,4 @@
-const users = [
+let users = [
   {
     username: "user1",
     email: "user1@email.com",

@@ -22,22 +22,27 @@ export default function validateForm() {
   const isValidateUsername = () => {
     // pega todos os nomes de usuário já cadastrados.
     const registeredUsernames = users.map(user => user.username);
+    const error = usernameError.querySelector('span');
 
-    if (!registeredUsernames.includes(username.value)) {
-      inputUsername.classList.remove('invalid');
-      usernameError.classList.remove('error');
-      return true;
-    } else {
-      const error = usernameError.querySelector('span');
-
-      if (registeredUsernames.includes(username.value)) {
-        error.textContent = "Username already registered.";
-      }
-
-      inputUsername.classList.add('invalid');
-      usernameError.classList.add('error');
+    inputUsername.classList.add('invalid');
+    usernameError.classList.add('error');
+    
+    // se estiver vazio.
+    if (username.value == "") {
+      error.textContent = "This field must not be empty.";
       return false;
     }
+
+    // se já incluso nos cadastros.
+    if (registeredUsernames.includes(username.value)) {
+      error.textContent = "Username already registered.";
+      return false;
+    }
+
+    inputUsername.classList.remove('invalid');
+    usernameError.classList.remove('error');
+    error.textContent = "";
+    return true;
   }
 
   // validação do email.
@@ -47,92 +52,99 @@ export default function validateForm() {
 
     // pega todos os emails já cadastrados.
     const registeredEmails = users.map(user => user.email);
+    const error = emailError.querySelector('span');
 
-    if (emailRegex.test(email.value)) {
-      if (registeredEmails.includes(email.value)) {
-        const error = emailError.querySelector('span');
-        inputEmail.classList.add('invalid');
-        emailError.classList.add('error');
-        error.textContent = "Email already registered.";
-        return false;
-      }
+    inputEmail.classList.add('invalid');
+    emailError.classList.add('error');
 
-      inputEmail.classList.remove('invalid');
-      emailError.classList.remove('error');
-      return true;
-    } else if (!emailRegex.test(email.value) && email.value != "") {
-      const error = emailError.querySelector('span');
-      inputEmail.classList.add('invalid');
-      emailError.classList.add('error');
+    // se estiver vazio.
+    if (email.value == "") {
+      error.textContent = "This field must not be empty.";
+      return false;
+    }
+
+    // se não passar no teste.
+    if (!emailRegex.test(email.value) && email.value != "") {
       error.textContent = "Invalid Email.";
       return false;
     }
+
+    // se já incluso nos cadastros.
+    if (registeredEmails.includes(email.value)) {
+      error.textContent = "Email already registered.";
+      return false;
+    }
+
+    inputEmail.classList.remove('invalid');
+    emailError.classList.remove('error');
+    error.textContent = "";
+    return true;
   };
   
   // validação da senha.
   const isValidatePassword = () => {
-    // expressão da senha.
-    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,24}$/;
+    const error = passwordError.querySelector('span');
+    let errors = [];
 
-    if (passwordRegex.test(password.value)) {
-      inputPassword.classList.remove('invalid');
-      passwordError.classList.remove('error');
-      return true;
-    } else {
-      inputPassword.classList.add('invalid');
-      passwordError.classList.add('error');
-      const error = passwordError.querySelector('span');
-      let errors = [];
+    inputPassword.classList.add('invalid');
+    passwordError.classList.add('error');
 
-      if (!/[0-9]/.test(password.value)) {
-        errors.push("number");
-      }
+    // verifica se há número.
+    if (!/[0-9]/.test(password.value)) errors.push("number");
 
-      if (!/[!@#$%^&*]/.test(password.value)) {
-        errors.push("special character");
-      }
+    // verifica se há caractere especial.
+    if (!/[!@#$%^&*]/.test(password.value)) errors.push("special character");
 
-      if (!/[A-Z]/.test(password.value)) {
-        errors.push("upper case");
-      } 
-      
-      if (errors.length > 0) {
-        error.textContent = `Missing: ${errors.join(", ")}`;
-        return false;
-      } else {
-        inputPassword.classList.remove('invalid');
-        passwordError.classList.remove('error');
-        return true;
-      }
+    // verifica se há letra maiúscula.
+    if (!/[A-Z]/.test(password.value)) errors.push("upper case");
+    
+    // se estiver vazio.
+    if (email.value == "") {
+      error.textContent = "This field must not be empty.";
+      return false;
     }
+
+    // se houver pelo um erro.
+    if (errors.length > 0) {
+      error.textContent = `Missing: ${errors.join(", ")}`;
+      return false;
+    }
+
+    inputPassword.classList.remove('invalid');
+    passwordError.classList.remove('error');
+    error.textContent = "";
+    return true;
   }
 
   // verifica se as senhas são iguais.
   const equalPassword = () => {
-    if (password.value === confirmPassword.value) {
-      inputConfirmPassword.classList.remove('invalid');
-      confirmPasswordError.classList.remove('error');
-      return true;
-    } else if (password.value !== confirmPassword.value && confirmPassword.value != "") {
-      inputConfirmPassword.classList.add('invalid');
-      confirmPasswordError.classList.add('error');
-      const error = confirmPasswordError.querySelector('span');
+    const error = confirmPasswordError.querySelector('span');
+    inputConfirmPassword.classList.add('invalid');
+    confirmPasswordError.classList.add('error');
+
+    // se estiver vazio.
+    if (confirmPassword.value == "") {
+      error.textContent = "This field must not be empty.";
+      return false;
+    }
+
+    // se as senhas forem diferentes.
+    if (password.value !== confirmPassword.value) {
       error.textContent = "Passwords don't match.";
       return false;
     }
+
+    inputConfirmPassword.classList.remove('invalid');
+    confirmPasswordError.classList.remove('error');
+    return true;
   }
 
   // verifica se tá tudo certo.
   const isFormValid = () => {
-    const validUsername = isValidatePassword();
+    const validUsername = isValidateUsername();
     const validEmail = isValidateEmail();
     const validPassword = isValidatePassword();
     const passwordsMatch = equalPassword();
-
-    console.log(validUsername)
-    console.log(validEmail)
-    console.log(validPassword)
-    console.log(passwordsMatch)
     
     return validUsername && validEmail && validPassword && passwordsMatch;
   }

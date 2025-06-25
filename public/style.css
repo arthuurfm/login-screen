@@ -241,11 +241,13 @@ body {
   opacity: 0;
 }
 
-/* validação do formulário de registro */
+/* validação do formulário de registro e login */
 .input-username.invalid,
 .input-email.invalid, 
 .input-password.invalid, 
-.input-confirm-password.invalid {
+.input-confirm-password.invalid,
+.input-email-login.invalid,
+.input-password-login.invalid {
   border: solid 1px #a94c4c;
 }
 

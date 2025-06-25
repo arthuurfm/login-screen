@@ -77,15 +77,23 @@
         <div class="linkedin-icon"><img src="./img/linkedin-icon.png"></div>
       </div>
       <p>or use your email to logging:</p>
-      <div class="input-area">
+      <div class="input-area input-email-login">
         <img src="./img/email-icon.png">
-        <input type="text" placeholder="Email">
+        <input id="email-login" type="email" placeholder="Email" required>
+        <div class="input-error">
+          <div></div>
+          <span></span>
+        </div>
       </div>
-      <div class="input-area">
+      <div class="input-area input-password-login">
         <img src="./img/padlock-icon.png">
-        <input type="text" placeholder="Password">
+        <input id="password-login" type="password" placeholder="Password" required>
+        <div class="input-error">
+          <div></div>
+          <span></span>
+        </div>
       </div>
-      <button>SIGN IN</button>
+      <button type="submit" id="sign-in-submit">SIGN IN</button>
     </div>
 
   </div>

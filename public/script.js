@@ -1,7 +1,9 @@
 import iconsHover from "./components/iconsHover.js";
 import slideControl from "./components/slideControl.js";
-import validateForm from "./components/validateForm.js";
+import validateLogin from "./components/validateLogin.js";
+import validateRegister from "./components/validateRegister.js";
 
 iconsHover();
 slideControl();
-validateForm();
+validateRegister();
+validateLogin();

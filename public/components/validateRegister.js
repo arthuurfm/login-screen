@@ -1,22 +1,26 @@
 import users from "./users.js";
 
-export default function validateForm() {
+export default function validateRegister() {
   const inputUsername = document.querySelector('.input-username');
   const inputEmail = document.querySelector('.input-email');
   const inputPassword = document.querySelector('.input-password');
   const inputConfirmPassword = document.querySelector('.input-confirm-password');
 
+  // texto de erro.
   const usernameError = document.querySelector('.input-username .input-error');
   const emailError = document.querySelector('.input-email .input-error');
   const passwordError = document.querySelector('.input-password .input-error');
   const confirmPasswordError = document.querySelector('.input-confirm-password .input-error');
   
+  // valor dos inputs.
   const username = document.getElementById('username');
   const email = document.getElementById('email');
   const password = document.getElementById('password');
   const confirmPassword = document.getElementById('confirm-password');
 
   const signUpSubmit = document.getElementById('sign-up-submit');
+
+  const signInSlide = document.querySelector('.sign-in-btn');
   
   // validação do nome de usuário.
   const isValidateUsername = () => {
@@ -58,8 +62,8 @@ export default function validateForm() {
     emailError.classList.add('error');
 
     // se estiver vazio.
-    if (email.value == "") {
-      error.textContent = "This field must not be empty.";
+    if (email.value == "") {  
+      error.textContent = "This field must not be empty.";  
       return false;
     }
 
@@ -140,13 +144,23 @@ export default function validateForm() {
   }
 
   // verifica se tá tudo certo.
-  const isFormValid = () => {
+  const isValidForm = () => {
     const validUsername = isValidateUsername();
     const validEmail = isValidateEmail();
     const validPassword = isValidatePassword();
     const passwordsMatch = equalPassword();
     
     return validUsername && validEmail && validPassword && passwordsMatch;
+  }
+
+  const clearForm = () => {
+    const inputArea = document.querySelectorAll('.input-area');
+    const inputError = document.querySelectorAll('.input-error');
+    const inputs = document.querySelectorAll('.input-area input');
+
+    inputArea.forEach(i => i.classList.remove('invalid'));
+    inputError.forEach(i => i.classList.remove('error'));
+    inputs.forEach(i => i.value = "");
   }
   
   username.addEventListener('input', isValidateUsername);
@@ -156,10 +170,12 @@ export default function validateForm() {
 
   signUpSubmit.addEventListener('click', (event) => {
     event.preventDefault();
-    if (isFormValid()) {
+    if (isValidForm()) {
       console.log("Conta criada com sucesso.");
     } else {
       console.log("Formulário inválido.");
     }
   });
+
+  signInSlide.addEventListener('click', clearForm);
 }

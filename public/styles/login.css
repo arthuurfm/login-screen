@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("./root.css");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font);
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 
 .container {
   position: relative;
-  background-color: #242424;
+  background-color: var(--bg-black);
   width: 90%;
   height: 90%;
   border-radius: 12px;
@@ -29,8 +29,8 @@ body {
 /* área de boas-vindas */
 .welcome-container {
   position: absolute;
-  background-color: #35a07a;
-  color: #242424;
+  background-color: var(--bg-green);
+  color: var(--text-black);
   width: 40%;
   height: 100%;
   display: flex;
@@ -49,8 +49,8 @@ body {
 
 /* ao arrastar o mouse */
 .welcome-container::selection {
-  background-color: #242424;
-  color: #35a07a;
+  background-color: var(--bg-black);
+  color: var(--text-green);
 }
 
 .welcome-container h1 {
@@ -63,9 +63,9 @@ body {
 }
 
 .welcome-container button, .form-container button {
-  background-color: #35a07a;
-  border: solid 2px #242424;
-  color: #242424;
+  background-color: var(--bg-green);
+  border: solid 2px var(--bg-black);
+  color: var(--text-black);
   padding: 0.5em 3em;
   font-size: 18px;
   border-radius: 16px;
@@ -86,7 +86,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #35a07a;
+  color: var(--text-green);
   left: 40%;
   transition: left 0.6s ease-in-out;
 }
@@ -96,8 +96,8 @@ body {
 }
 
 .form-container::selection {
-  background-color: #35a07a;
-  color: #242424;
+  background-color: var(--bg-green);
+  color: var(--text-black);
 }
 
 .form-container h2 {
@@ -118,12 +118,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px #35a07a;
+  border: solid 1px var(--bg-green);
   cursor: pointer;
 }
 
 .form-container .icons-area div:hover {
-  background-color: #35a07a;
+  background-color: var(--bg-green);
 }
 
 .form-container .icons-area div img {
@@ -157,7 +157,7 @@ body {
 }
 
 .form-container .input-area:focus-within {
-  border: solid 1px #35a07a;
+  border: solid 1px var(--bg-green);
 }
 
 .form-container .input-area input {
@@ -167,12 +167,12 @@ body {
   border: none;
   outline: none;
   font-size: 16px;
-  caret-color: #35a07a;
-  color: #35a07a;
+  caret-color: var(--bg-green);
+  color: var(--bg-green);
 }
 
 .form-container .input-area input::placeholder {
-  color:#35a07a;
+  color: var(--text-green);
   opacity: 0.7;
 }
 
@@ -266,7 +266,7 @@ body {
   width: 120px;
   height: 50px;
   background-color: #a94c4c;
-  color: #242424;
+  color: var(--text-black);
   font-weight: bold;
   font-size: 12px;
   padding: 4px;
@@ -274,7 +274,7 @@ body {
 }
 
 .input-error::selection {
-  background-color: #242424;
+  background-color: var(--bg-black);
   color: #a94c4c;
 }
 

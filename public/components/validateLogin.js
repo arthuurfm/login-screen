@@ -98,9 +98,15 @@ export default function validateLogin() {
   signInSubmit.addEventListener('click', (event) => {
     event.preventDefault();
     if (isValidForm()) {
-      console.log("logado");
-    } else {
-      console.log("erro");
+      const user = users.find(user => user.email === email);
+
+      if (user) {
+        // guarda o usuário logado localmente.
+        sessionStorage.setItem('loggedUser', JSON.stringify(user));
+        // redireciona para outra página.
+        window.location.href = "./profile.html";
+      }
+
     }
   });
 }

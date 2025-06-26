@@ -8,11 +8,11 @@ export default function iconsHover() {
     const img = icon.querySelector('img');
     
     icon.addEventListener('mouseover', () => {
-      img.src = "./img/dark-facebook-icon.png";
+      img.src = "../img/dark-facebook-icon.png";
     });
 
     icon.addEventListener('mouseleave', (event) => {
-      img.src = "./img/facebook-icon.png";
+      img.src = "../img/facebook-icon.png";
     });
   });
   
@@ -21,11 +21,11 @@ export default function iconsHover() {
     const img = icon.querySelector('img');
 
     icon.addEventListener('mouseover', (event) => {
-      img.src = "./img/dark-google-icon.png";
+      img.src = "../img/dark-google-icon.png";
     });
 
     icon.addEventListener('mouseleave', (event) => {
-      img.src = "./img/google-icon.png";
+      img.src = "../img/google-icon.png";
     });
   });
 
@@ -34,11 +34,11 @@ export default function iconsHover() {
     const img = icon.querySelector('img');
 
     icon.addEventListener('mouseover', (event) => {
-      img.src = "./img/dark-linkedin-icon.png";
+      img.src = "../img/dark-linkedin-icon.png";
     });
 
     icon.addEventListener('mouseleave', (event) => {
-      img.src = "./img/linkedin-icon.png";
+      img.src = "../img/linkedin-icon.png";
     });
   });
 }

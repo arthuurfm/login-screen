@@ -1,13 +1,15 @@
 let users = [
   {
-    username: "user1",
-    email: "user1@email.com",
-    password: "User123!"
+    name: "Arthur Morgan",
+    username: "a.morgan",
+    email: "morgan@email.com",
+    password: "Morgan123*"
   },
-  {
-    username: "user2",
-    email: "user2@email.com",
-    password: "User321!"
+  { 
+    name: "Ducth Van Der Linde",
+    username: "dutch.vdl",
+    email: "dutch2@email.com",
+    password: "Dutch123@"
   }
 ];
 

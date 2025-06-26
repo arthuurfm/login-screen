@@ -17,10 +17,20 @@ export default function validateRegister() {
   const email = document.getElementById('email');
   const password = document.getElementById('password');
   const confirmPassword = document.getElementById('confirm-password');
+  const inputs = document.querySelectorAll('.input-area input');
 
   const signUpSubmit = document.getElementById('sign-up-submit');
-
   const signInSlide = document.querySelector('.sign-in-btn');
+  
+  // limpa o formulário ao fazer o slide.
+  const clearForm = () => {
+    const inputArea = document.querySelectorAll('.input-area');
+    const inputError = document.querySelectorAll('.input-error');
+
+    inputArea.forEach(i => i.classList.remove('invalid'));
+    inputError.forEach(i => i.classList.remove('error'));
+    inputs.forEach(i => i.value = "");
+  }
   
   // validação do nome de usuário.
   const isValidateUsername = () => {
@@ -152,21 +162,6 @@ export default function validateRegister() {
     
     return validUsername && validEmail && validPassword && passwordsMatch;
   }
-
-  const clearForm = () => {
-    const inputArea = document.querySelectorAll('.input-area');
-    const inputError = document.querySelectorAll('.input-error');
-    const inputs = document.querySelectorAll('.input-area input');
-
-    inputArea.forEach(i => i.classList.remove('invalid'));
-    inputError.forEach(i => i.classList.remove('error'));
-    inputs.forEach(i => i.value = "");
-  }
-  
-  username.addEventListener('input', isValidateUsername);
-  email.addEventListener('input', isValidateEmail);
-  password.addEventListener('input', isValidatePassword);
-  confirmPassword.addEventListener('input', equalPassword);
 
   signUpSubmit.addEventListener('click', (event) => {
     event.preventDefault();

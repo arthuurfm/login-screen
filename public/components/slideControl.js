@@ -9,6 +9,8 @@ export default function slideControl() {
   const welcomeSignIn = document.querySelector('.welcome-sign-in');
   const welcomeSignUp = document.querySelector('.welcome-sign-up');
 
+  document.title = "Register";
+
   // mostra o form de login
   const showSignIn = () => {
     formSignUp.classList.add('hide');
@@ -30,19 +32,21 @@ export default function slideControl() {
     container.classList.add('active');
     formSignUp.classList.add('hidden');
     welcomeSignUp.classList.add('hidden');
-
+    document.title = "Login";
+    
     setTimeout(() => {
       formSignUp.classList.remove('hidden');
       welcomeSignUp.classList.remove('hidden');
       showSignIn();
     }, 450);
   });
-
+  
   // ao clicar no botão de sign up.
   signUpBtn.addEventListener('click', () => {
     container.classList.remove('active');
     formSignIn.classList.add('hidden');
     welcomeSignIn.classList.add('hidden');
+    document.title = "Register";
 
     setTimeout(() => {
       formSignIn.classList.remove('hidden');

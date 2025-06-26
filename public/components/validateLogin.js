@@ -98,7 +98,7 @@ export default function validateLogin() {
   signInSubmit.addEventListener('click', (event) => {
     event.preventDefault();
     if (isValidForm()) {
-      const user = users.find(user => user.email === email);
+      const user = users.find(user => user.email === email.value);
 
       if (user) {
         // guarda o usuário logado localmente.
@@ -106,7 +106,6 @@ export default function validateLogin() {
         // redireciona para outra página.
         window.location.href = "./profile.html";
       }
-
     }
   });
 }

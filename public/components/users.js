@@ -8,7 +8,7 @@ let users = [
   { 
     name: "Ducth Van Der Linde",
     username: "dutch.vdl",
-    email: "dutch2@email.com",
+    email: "dutch@email.com",
     password: "Dutch123@"
   }
 ];

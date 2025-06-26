@@ -53,6 +53,11 @@ export default function validateRegister() {
       return false;
     }
 
+    if (!/^[a-zA-Z0-9._]+$/.test(username.value) || /\s/.test(username.value)) {
+      error.textContent = "Only letters, numbers, '.' and '_' allowed.";
+      return false;
+    }
+
     inputUsername.classList.remove('invalid');
     usernameError.classList.remove('error');
     error.textContent = "";
@@ -152,7 +157,7 @@ export default function validateRegister() {
     confirmPasswordError.classList.remove('error');
     return true;
   }
-
+  
   // verifica se tá tudo certo.
   const isValidForm = () => {
     const validUsername = isValidateUsername();
@@ -166,9 +171,17 @@ export default function validateRegister() {
   signUpSubmit.addEventListener('click', (event) => {
     event.preventDefault();
     if (isValidForm()) {
-      console.log("Conta criada com sucesso.");
-    } else {
-      console.log("Formulário inválido.");
+      let newUser = {
+        name: "", 
+        username: username.value, 
+        email: email.value, 
+        password: password.value
+      };
+
+      users.push(newUser);
+      sessionStorage.setItem('loggedUser', JSON.stringify(newUser));
+      sessionStorage.setItem('justRegistered', 'true');
+      window.location.href = "./profile.html";
     }
   });
 

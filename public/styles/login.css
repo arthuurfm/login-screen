@@ -132,6 +132,15 @@ body {
   user-select: none;
 }
 
+.show-password {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.show-password.show {
+  opacity: 1;
+}
+
 .form-container p {
   margin: 12px 0 24px 0;
   font-size: 20px;

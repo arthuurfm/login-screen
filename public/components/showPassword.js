@@ -12,14 +12,24 @@ export default function showPassword() {
       });
 
       icon.addEventListener('click', () => {
-        if (!icon.classList.contains('show')) {
-          icon.classList.add('show');
-          passwordInput.type = 'text';
-        } else {
-          icon.classList.remove('show');
-          passwordInput.type = 'password';
-        }
+        const showing = icon.classList.toggle('show');
+        passwordInput.type = showing ? 'text' : 'password';
       });
+
+      const updateVisibility = () => {
+        if (document.activeElement === passwordInput || passwordInput.value !== '') {
+          i.classList.add('active');
+        } else {
+          i.classList.remove('active');
+        }
+      };
+
+      // todas as possibilidades
+      ['input', 'blur', 'focus'].forEach(e =>
+        passwordInput.addEventListener(e, updateVisibility)
+      );
+
+      updateVisibility(); // inicial
     }
   });
 }

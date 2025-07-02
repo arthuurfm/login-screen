@@ -1,0 +1,56 @@
+/* cabeçalho */
+header {
+  height: 5em;
+  width: 100%;
+  background-color: var(--bg-black);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 32px;
+}
+
+/* botões da barra de navegação */
+.explore-area span {
+  padding: 0.5em 0;
+  font-size: 18px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.explore-area span:hover {
+  border-bottom: 2px solid var(--bg-green);
+}
+
+.profile-area {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--bg-green);
+  padding-right: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  border-right: 1px solid var(--bg-green)
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}

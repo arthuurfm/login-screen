@@ -15,7 +15,7 @@ export default function showPassword() {
         const showing = icon.classList.toggle('show');
         passwordInput.type = showing ? 'text' : 'password';
       });
-
+      
       const updateVisibility = () => {
         if (document.activeElement === passwordInput || passwordInput.value !== '') {
           i.classList.add('active');

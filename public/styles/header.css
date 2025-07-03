@@ -30,7 +30,7 @@ header {
   border-bottom: 2px solid var(--bg-green);
 }
 
-.profile-area {
+.profile-area, .login-area {
   display: flex;
   align-items: center;
   border: 1px solid var(--bg-green);
@@ -41,7 +41,7 @@ header {
   cursor: pointer;
 }
 
-.profile-area:hover {
+.profile-area:hover, .login-area:hover {
   background-color: var(--bg-green-hover);
   border: 1px solid var(--bg-green-hover);
 }
@@ -61,4 +61,14 @@ header {
   height: 100%;
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-area {
+  padding-right: 4px;
+  height: 30px;
+  font-weight: bold;
 }

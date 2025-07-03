@@ -12,9 +12,9 @@ export default function header(user) {
         </div>
         <div>
           <div class="profile-area">
-          <span>${isLogged(user.name)}</span>
+          <span>${user.name}</span>
             <div class="profile-img">
-              <img src="${isLogged(user.picture)}">
+              <img src="${user.picture}">
             </div>
           </div>
         </div>
@@ -31,12 +31,11 @@ export default function header(user) {
           <span>COMMUNITY</span>
         </div>
         <div>
-          <div class="profile-area">
-          <span>name</span>
-            <div class="profile-img">
-              <img src="../img/dark-user-icon.png">
+          <a href="login.html">
+            <div class="login-area">
+              <span>Login / Register</span>
             </div>
-          </div>
+          </a>
         </div>
       </nav>
     </header>

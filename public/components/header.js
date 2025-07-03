@@ -1,5 +1,12 @@
-export default function header() {
+export default function header(user) {
   const header = document.createElement('body');
+  const isLogged = (user) => {
+    if (!user || "") {
+      return "name";
+    } else {
+      return user;
+    }
+  }
   header.innerHTML = `
     <header>
       <nav class="nav-bar">
@@ -10,10 +17,10 @@ export default function header() {
         </div>
         <div>
           <div class="profile-area">
+          <span>${isLogged(user.name)}</span>
             <div class="profile-img">
-              <img src="https://www.giantbomb.com/a/uploads/original/5/56742/3058593-arthur_portrait.jpg">
+              <img src="${isLogged(user.picture)}">
             </div>
-            <span>arthur morgan</span>
           </div>
         </div>
       </nav>

@@ -11,7 +11,7 @@ let users = [
     username: "dutch.vdl",
     email: "dutch@email.com",
     password: "Dutch123@",
-    picture: "https://static.wikia.nocookie.net/reddeadredemption/images/8/87/RDR2_Dutch_van_der_Linde_PC.png/revision/latest?cb=20191216204516"
+    picture: "https://static.wikia.nocookie.net/inconsistently-heinous/images/f/f3/DutchRDR2.webp/revision/latest?cb=20230730161208"
   }
 ];
 

@@ -10,13 +10,13 @@ export default function header(user) {
           <span>COMMUNITY</span>
         </div>
         <div>
-          <div class="profile-area">
+          <div class="profile-icon">
             <span>${user.name}</span>
             <div class="profile-img">
               <img src="${user.picture}">
             </div>
             <div class="profile-options">
-              <div>My Profile</div>
+              <div id="my-profile">My Profile</div>
               <div id="logout">Logout</div>
             </div>
           </div>
@@ -29,13 +29,19 @@ export default function header(user) {
     const count = profileOptions.querySelectorAll('div').length;
     profileOptions.style.bottom = `-${35 * count + 2}px`;
 
-    const profileArea = document.querySelector('.profile-area');
-    profileArea.addEventListener('click', () => {
+    const profileIcon = document.querySelector('.profile-icon');
+    profileIcon.addEventListener('click', () => {
       profileOptions.classList.toggle('show');
     });
 
     const logout = document.getElementById('logout');
-    logout.addEventListener('click', () => window.location.href = './login.html')
+    logout.addEventListener('click', () => {
+      sessionStorage.removeItem('loggedUser');
+      window.location.href = './login.html';
+    });
+
+    const myProfile = document.getElementById('my-profile');
+    myProfile.addEventListener('click', () => window.location.href = './profile.html');
   });
 
   } else {

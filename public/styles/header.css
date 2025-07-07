@@ -30,7 +30,7 @@ header {
   border-bottom: 2px solid var(--bg-green);
 }
 /* profile-area só aparece quando logado. login-area só aparece quando deslogado. */
-.profile-area, .login-area {
+.profile-icon, .login-area {
   position: relative;
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@ header {
   user-select: none;
 }
 
-.profile-area:hover, .login-area:hover {
+.profile-icon:hover, .login-area:hover {
   background-color: var(--bg-green-hover);
   border: 1px solid var(--bg-green-hover);
 }
@@ -82,7 +82,7 @@ a {
 
 .profile-options.show {
   position: absolute;
-  background-color: var(--bg-green);
+  background-color: var(--bg-green-hover);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,5 +99,5 @@ a {
 }
 
 .profile-options div:hover {
-  background-color: var(--bg-green-hover);
+  background-color: #2b8163;
 }

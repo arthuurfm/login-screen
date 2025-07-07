@@ -55,6 +55,7 @@ body::selection {
   margin: 0 auto;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .profile-area {
@@ -74,7 +75,7 @@ body::selection {
   width: 250px;
   height: 250px;
   border-radius: 100%;
-  border: 3px solid #121212;
+  border: 3px solid var(--bg-green);
 }
 
 .profile-area h2 {
@@ -93,4 +94,29 @@ body::selection {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.profile-games {
+  position: relative;
+  top: -50px;
+  width: 62%;
+  background-color: var(--bg-black);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.edit-profile-btn {
+  background-color: var(--bg-green);
+  color: var(--text-black);
+  border: none;
+  padding: .5em 2.5em;
+  font-size: 16px;
+  border-radius: 16px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+  background-color: var(--bg-green-hover);
 }

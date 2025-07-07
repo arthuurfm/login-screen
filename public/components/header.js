@@ -6,7 +6,6 @@ export default function header(user) {
       <nav class="nav-bar">
         <div class="explore-area">
           <span>STORE</span>
-          <span>LIBRARY</span>
           <span>COMMUNITY</span>
         </div>
         <div>

@@ -22,7 +22,13 @@ h3 {
 }
 
 label {
+  position: relative;
   margin-bottom: 4px;
+}
+
+label span {
+  position: absolute;
+  right: 0;
 }
 
 .input-area, .file {
@@ -34,6 +40,10 @@ label {
   border-radius: 12px;
   padding: 6px;
   background-color: #353535;
+}
+
+.input-area.invalid {
+  border: solid 1px #a94c4c;
 }
 
 .input-area:focus-within {

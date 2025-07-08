@@ -13,7 +13,7 @@ export default function validateEditProfile(user) {
   // inputs começam preenchidos pelo valor atual.
   username.value = user.username;
   name.value = user.name;
-  biography.value = user.biography;
+  biography.value = user.bio;
 
   // validação do nome de usuário.
   const isValidateUsername = () => {
@@ -33,9 +33,6 @@ export default function validateEditProfile(user) {
     // padrão do username.
     if (!/^[a-zA-Z0-9._]+$/.test(username.value) || /\s/.test(username.value)) return false;
 
-    // se não é igual ao anterior.
-    if (username.value == user.username) return false;
-
     inputUsername.classList.remove('invalid');
     return true;
   }
@@ -48,8 +45,6 @@ export default function validateEditProfile(user) {
       inputName.classList.remove('invalid');
       return true;
     }
-
-    if (name.value == user.name) return false;
 
     inputName.classList.remove('invalid');
     return true;
@@ -104,8 +99,6 @@ export default function validateEditProfile(user) {
       return true;
     }
 
-    if (biography.value == user.biography) return false;
-
     inputBio.classList.remove('invalid');
     return true;
   }
@@ -121,11 +114,11 @@ export default function validateEditProfile(user) {
     user.username = username.value !== "" ? username.value : user.username;
     user.name = name.value !== "" ? name.value : user.name;
     user.password = newPassword.value !== "" ? newPassword.value : user.password;
-    user.biography = biography.value !== "" ? biography.value : user.biography;
+    user.bio = biography.value !== "" ? biography.value : user.bio;
 
     document.querySelector('.profile-username').textContent = `@${user.username}`;
     document.querySelector('.profile-name').textContent = user.name;
-    document.querySelector('.profile-bio').textContent = user.biography;
+    document.querySelector('.profile-bio').textContent = user.bio;
     document.querySelector('.profile-icon span').textContent = user.name;
 
     sessionStorage.setItem('loggedUser', JSON.stringify(user));

@@ -4,7 +4,7 @@ let users = [
     username: "a.morgan",
     email: "morgan@email.com",
     password: "Morgan123*",
-    picture: "https://i.pinimg.com/736x/3a/17/06/3a1706903cc7ae48fb72b11857813523.jpg",
+    picture: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/02/red-dead-redemption-2-arthur-morgan.jpg",
     bio: "You're a good girl..."
   },
   { 

@@ -1,5 +1,6 @@
-@import url("./root.css");
+@import "./root.css";
 @import "./header.css";
+@import "./edit-profile.css";
 
 * {
   padding: 0;
@@ -76,6 +77,7 @@ body::selection {
   height: 250px;
   border-radius: 100%;
   border: 3px solid var(--bg-green);
+  object-fit: cover;
 }
 
 .profile-area h2 {
@@ -96,7 +98,7 @@ body::selection {
   align-items: center;
 }
 
-.profile-games {
+.profile-content {
   position: relative;
   top: -50px;
   width: 62%;

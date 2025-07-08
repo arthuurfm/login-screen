@@ -1,5 +1,6 @@
 let users = [
   {
+    id: 1,
     name: "Arthur Morgan",
     username: "a.morgan",
     email: "morgan@email.com",
@@ -8,6 +9,7 @@ let users = [
     bio: "You're a good girl..."
   },
   { 
+    id: 2,
     name: "Ducth Van Der Linde",
     username: "dutch.vdl",
     email: "dutch@email.com",

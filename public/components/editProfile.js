@@ -5,14 +5,14 @@ export default function editProfile(user) {
       <div>
         <label for="username">Username</label>
         <div class="input-area input-username">
-        <input id="username" type="text" placeholder="${user.username}">
+        <input id="username" type="text">
         </div>
       </div>
 
       <div>
         <label for="name">Name<span class="name-char-count">0/50</span></label>
         <div class="input-area input-name">
-          <input id="name" type="name" placeholder="${user.name}" maxlength="50">
+          <input id="name" type="name" maxlength="50">
         </div>
       </div>
 

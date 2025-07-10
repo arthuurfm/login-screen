@@ -1,26 +1,24 @@
 export default function header(user) {
   const header = document.createElement('header');
-  const isLogged = user && user.name && user.picture;
-  if (isLogged) {
-    header.innerHTML = `
-      <nav class="nav-bar">
-        <div class="explore-area">
-          <span>STORE</span>
-          <span>COMMUNITY</span>
-        </div>
-        <div>
-          <div class="profile-icon">
-            <span>${user.name}</span>
-            <div class="profile-img">
-              <img src="${user.picture}">
-            </div>
-            <div class="profile-options">
-              <div id="my-profile">My Profile</div>
-              <div id="logout">Logout</div>
-            </div>
+  header.innerHTML = `
+    <nav class="nav-bar">
+      <div class="explore-area">
+        <span>STORE</span>
+        <span>COMMUNITY</span>
+      </div>
+      <div>
+        <div class="profile-icon">
+          <span>${user.name}</span>
+          <div class="profile-img">
+            <img src="${user.picture}">
+          </div>
+          <div class="profile-options">
+            <div id="my-profile">My Profile</div>
+            <div id="logout">Logout</div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   `;
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -43,23 +41,6 @@ export default function header(user) {
     myProfile.addEventListener('click', () => window.location.href = './profile.html');
   });
 
-  } else {
-    header.innerHTML = `
-      <nav class="nav-bar">
-        <div class="explore-area">
-          <span>STORE</span>
-          <span>COMMUNITY</span>
-        </div>
-        <div>
-          <a href="login.html">
-            <div class="login-area">
-              <span>Login</span>
-            </div>
-          </a>
-        </div>
-      </nav>
-  `;
-  }
   // Apaga header antigo, se já existir
   const existingHeader = document.querySelector('header');
   if (existingHeader) existingHeader.remove();

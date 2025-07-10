@@ -3,8 +3,13 @@ import header from "../components/header.js";
 import validateEditProfile from "../utils/validateEditProfile.js";
 
 const loggedUser = sessionStorage.getItem('loggedUser');
-const user = JSON.parse(loggedUser);
 
+// se não logado, volta para a tela de login.
+if (!loggedUser) {
+  window.location.href = "./login.html";
+}
+
+const user = JSON.parse(loggedUser);
 const profileContent = document.querySelector('.profile-content');
 
 header(user);

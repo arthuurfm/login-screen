@@ -102,3 +102,28 @@ a {
 .profile-options div:hover {
   background-color: #3db98e;
 }
+
+@media (max-width: 767px) {
+  .explore-area span {
+    font-size: 14px;
+  }
+
+  .profile-icon span {
+    display: none;
+  }
+
+  .profile-icon, .profile-img, .profile-img img {
+    border-radius: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .profile-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .login-area {
+    font-size: 14px;
+  }
+}

@@ -38,7 +38,7 @@ export default function editProfile(user) {
       </div>
 
       <div>
-        <span>Picture</span>
+        <span class="file-span">Picture</span>
         <div class="file">
           <label class="input-file" for="picture">Send File</label>
           <input id="picture" type="file">

@@ -50,6 +50,10 @@ label span {
   border: solid 1px var(--bg-green);
 }
 
+.file-span {
+  margin-bottom: 4px;
+}
+
 .input-area input, .input-file {
   height: 100%;
   width: 100%;
@@ -73,18 +77,12 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
   margin: 0;
   border-radius: inherit;
 }
 
 .input-file:hover {
   background-color: #3b3b3b;
-}
-
-.input-area input::placeholder {
-  color: var(--text-green);
-  opacity: 0.7;
 }
 
 .buttons {
@@ -113,4 +111,24 @@ input[type="file"] {
 
 .cancel-changes:hover {
   background-color: #b53939;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  label, label span, .input-area input, .file-span, .buttons button {
+    font-size: 14px;
+  }
+
+  .input-area, .file {
+    width: 175px;
+  }
+}
+
+@media (max-width: 767px) {
+  label, label span, .input-area input, .file-span, .buttons button {
+    font-size: 12px;
+  }
+  
+  .input-area, .file {
+    width: 140px;
+  }
 }

@@ -213,17 +213,6 @@ body::selection {
     object-fit: cover;
   }
 
-  #edit-profile-btn-mobile {
-    padding: .5em 2.5em;
-    font-size: 12px;
-    background-color: var(--bg-black);
-    color: var(--text-green);
-  }
-
-  #edit-profile-btn-mobile:active {
-    background-color: #121212;
-  }
-
   .profile-area-mobile .profile-info {
     width: 100%;
     font-size: 12px;

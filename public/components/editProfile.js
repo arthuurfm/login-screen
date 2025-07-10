@@ -48,7 +48,6 @@ export default function editProfile(user) {
 
     <div class="buttons">
       <button type="submit" class="confirm-changes">Confirm Changes</button>
-      <button type="submit" class="cancel-changes">Cancel</button>
     </div>
     `
 }

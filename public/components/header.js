@@ -23,8 +23,6 @@ export default function header(user) {
 
   window.addEventListener('DOMContentLoaded', () => {
     const profileOptions = document.querySelector('.profile-options');
-    const count = profileOptions.querySelectorAll('div').length;
-    profileOptions.style.bottom = `-${35 * count + 2}px`;
 
     const profileIcon = document.querySelector('.profile-icon');
     profileIcon.addEventListener('click', (e) => {

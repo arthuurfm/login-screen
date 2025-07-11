@@ -39,6 +39,8 @@ body::selection {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .banner-container::selection {

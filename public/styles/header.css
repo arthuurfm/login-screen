@@ -42,6 +42,7 @@ header {
   border: 1px solid var(--bg-green);
   cursor: pointer;
   user-select: none;
+  z-index: 1;
 }
 
 .profile-icon:hover, .login-area:hover {
@@ -87,7 +88,7 @@ a {
   background-color: var(--bg-green-hover);
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 1000;
+  z-index: 9999;
   overflow: hidden;
 }
 

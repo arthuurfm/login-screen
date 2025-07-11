@@ -27,7 +27,8 @@ export default function header(user) {
     profileOptions.style.bottom = `-${35 * count + 2}px`;
 
     const profileIcon = document.querySelector('.profile-icon');
-    profileIcon.addEventListener('click', () => {
+    profileIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
       profileOptions.classList.toggle('show');
     });
 

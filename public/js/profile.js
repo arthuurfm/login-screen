@@ -26,6 +26,7 @@ profileContent.innerHTML = editProfile(user);
 // contador de caractéres do nome.
 const nameCharCount = profileContent.querySelector('.name-char-count');
 const inputName = profileContent.querySelector('#name');
+nameCharCount.textContent = `${inputName.value.length}/50`;
 inputName.addEventListener('input', () => {
   const currentLength = inputName.value.length;
   nameCharCount.textContent = `${currentLength}/50`;
@@ -34,6 +35,7 @@ inputName.addEventListener('input', () => {
 // contador de caractéres da biografia.
 const bioCharCount = profileContent.querySelector('.bio-char-count');
 const inputBio = profileContent.querySelector('#biography');
+bioCharCount.textContent = `${inputBio.value.length}/50`;
 inputBio.addEventListener('input', () => {
   const currentLength = inputBio.value.length;
   bioCharCount.textContent = `${currentLength}/250`;

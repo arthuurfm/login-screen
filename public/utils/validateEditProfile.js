@@ -7,6 +7,7 @@ export default function validateEditProfile(user) {
   const newPassword = document.getElementById('new-password');
   const confirmNewPassword = document.getElementById('confirm-new-password');
   const biography = document.getElementById('biography');
+  const picture = document.getElementById('picture');
   
   const confirmChanges = document.querySelector('.confirm-changes');
 
@@ -17,8 +18,7 @@ export default function validateEditProfile(user) {
 
   // validação do nome de usuário.
   const isValidateUsername = () => {
-    const registeredUsernames = users.map(user => user.username);
-    
+
     const inputUsername = document.querySelector('.input-username');
     inputUsername.classList.add('invalid');
 
@@ -26,9 +26,6 @@ export default function validateEditProfile(user) {
       inputUsername.classList.remove('invalid');
       return true;
     }
-
-    // se já incluso nos cadastros.
-    if (registeredUsernames.includes(username.value)) return false;
 
     // padrão do username.
     if (!/^[a-zA-Z0-9._]+$/.test(username.value) || /\s/.test(username.value)) return false;
@@ -120,6 +117,29 @@ export default function validateEditProfile(user) {
     document.querySelector('.profile-name').textContent = user.name;
     document.querySelector('.profile-bio').textContent = user.bio;
     document.querySelector('.profile-icon span').textContent = user.name;
+    
+    // salvar foto.
+    if (picture.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        // atualiza a foto de perfil.
+        user.picture = reader.result;
+
+        // atualiza a interface.
+        document.querySelector('.profile-icon img').src = reader.result;
+        document.querySelector('.profile-area img').src = reader.result;
+        document.querySelector('.profile-area-mobile img').src = reader.result;
+
+        // força a salvar.
+        sessionStorage.setItem('loggedUser', JSON.stringify(user));
+      }
+
+      reader.readAsDataURL(picture.files[0]);
+    } else {
+      // mantém a anterior.
+      user.picture = user.picture;
+    }
 
     sessionStorage.setItem('loggedUser', JSON.stringify(user));
   });

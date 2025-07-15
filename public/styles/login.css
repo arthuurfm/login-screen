@@ -132,6 +132,18 @@ body {
   user-select: none;
 }
 
+.facebook-icon:hover img {
+  content: url("../img/dark-facebook-icon.png");
+}
+
+.google-icon:hover img {
+  content: url("../img/dark-google-icon.png");
+}
+
+.linkedin-icon:hover img {
+  content: url("../img/dark-linkedin-icon.png");
+}
+
 .form-container span {
   display: none;
 }
@@ -268,49 +280,6 @@ body {
 .input-email-login.invalid,
 .input-password-login.invalid {
   border: solid 1px #a94c4c;
-}
-
-/* display que mostra o erro a ser corrigido no input correspondente */
-.input-error.error {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.input-error {
-  display: none;
-  position: absolute;
-  right: -140px;
-  width: 120px;
-  height: 50px;
-  background-color: #a94c4c;
-  color: var(--text-black);
-  font-weight: bold;
-  font-size: 12px;
-  padding: 4px;
-  border-radius: inherit;
-}
-
-.input-error::selection {
-  background-color: var(--bg-black);
-  color: #a94c4c;
-}
-
-.input-error span {
-  position: relative;
-  z-index: 2;
-}
-
-.input-error div {
-  z-index: 1;
-  position: absolute;
-  left: -5px;
-  bottom: 12.5px;
-  rotate: 45deg;
-  width: 25px;
-  height: 25px;
-  background-color: #a94c4c;
 }
 
 @media (max-width: 1023px) and (min-width: 769px) {
@@ -451,7 +420,31 @@ body {
     border: 1px solid var(--bg-black)
   }
 
-  .sign-in-container .icons-area div:hover {
+  .sign-in-container .facebook-icon img {
+    content: url("../img/dark-facebook-icon.png");
+  }
+
+  .sign-in-container .google-icon img {
+    content: url("../img/dark-google-icon.png");
+  }
+
+  .sign-in-container .linkedin-icon img {
+    content: url("../img/dark-linkedin-icon.png");
+  }
+
+  .sign-up-container .icons-area div:hover {
     background-color: var(--bg-black);
+  }
+
+  .sign-up-container .facebook-icon:hover img {
+    content: url("../img/facebook-icon.png");
+  }
+
+  .sign-up-container .google-icon:hover img {
+    content: url("../img/google-icon.png");
+  }
+
+  .sign-up-container .linkedin-icon:hover img {
+    content: url("../img/linkedin-icon.png");
   }
 }

@@ -2,6 +2,7 @@ import users from './users.js';
 
 export default function validateLogin() {
   const signUpSlide = document.querySelector('.sign-up-btn');
+  const signUpSpan = document.querySelector('.sign-up-container span b');
   const signInSubmit = document.getElementById('sign-in-submit');
   
   const inputEmail = document.querySelector('.input-email-login');
@@ -15,11 +16,9 @@ export default function validateLogin() {
   // limpa o formulário ao fazer o slide.
   const clearForm = () => {
     const inputArea = document.querySelectorAll('.input-area');
-    const inputError = document.querySelectorAll('.input-error');
     const inputs = document.querySelectorAll('.input-area input');
 
     inputArea.forEach(i => i.classList.remove('invalid'));
-    inputError.forEach(i => i.classList.remove('error'));
     inputs.forEach(i => i.value = "");
   }
 
@@ -77,6 +76,8 @@ export default function validateLogin() {
   inputs.forEach(i => i.addEventListener('input', isTyping));
 
   signUpSlide.addEventListener('click', clearForm);
+  signUpSpan.addEventListener('click', clearForm);
+
   signInSubmit.addEventListener('click', (event) => {
     event.preventDefault();
     if (isValidForm()) {

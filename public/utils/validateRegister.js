@@ -15,6 +15,7 @@ export default function validateRegister() {
 
   const signUpSubmit = document.getElementById('sign-up-submit');
   const signInSlide = document.querySelector('.sign-in-btn');
+  const signInSpan = document.querySelector('.sign-in-container span b');
   
   // limpa o formulário ao fazer o slide.
   const clearForm = () => {
@@ -155,4 +156,5 @@ export default function validateRegister() {
   });
 
   signInSlide.addEventListener('click', clearForm);
+  signInSpan.addEventListener('click', clearForm);
 }

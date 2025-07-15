@@ -151,7 +151,7 @@ export default function validateRegister() {
       users.push(newUser);
       sessionStorage.setItem('loggedUser', JSON.stringify(newUser));
       sessionStorage.setItem('justRegistered', 'true');
-      window.location.href = "public/pages/profile.html";
+      window.location.href = "pages/profile.html";
     }
   });
 

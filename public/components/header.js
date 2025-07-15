@@ -33,7 +33,7 @@ export default function header(user) {
     const logout = document.getElementById('logout');
     logout.addEventListener('click', () => {
       sessionStorage.removeItem('loggedUser');
-      window.location.href = '../../index.html';
+      window.location.href = '../index.html';
     });
 
     const myProfile = document.getElementById('my-profile');

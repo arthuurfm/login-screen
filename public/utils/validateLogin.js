@@ -87,7 +87,7 @@ export default function validateLogin() {
         // guarda o usuário logado localmente.
         sessionStorage.setItem('loggedUser', JSON.stringify(user));
         // redireciona para outra página.
-        window.location.href = "/public/pages/profile.html";
+        window.location.href = "pages/profile.html";
       }
     }
   });

@@ -133,11 +133,11 @@ body {
 }
 
 .facebook-icon:hover img {
-  content: url("../img/dark-facebook-icon.png");
+  content: url("../img/dark-insta-icon.png");
 }
 
 .google-icon:hover img {
-  content: url("../img/dark-google-icon.png");
+  content: url("../img/dark-git-icon.png");
 }
 
 .linkedin-icon:hover img {
@@ -360,8 +360,8 @@ body {
   }
 
   .form-container .icons-area div img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
 
   .form-container .input-area {
@@ -421,11 +421,11 @@ body {
   }
 
   .sign-in-container .facebook-icon img {
-    content: url("../img/dark-facebook-icon.png");
+    content: url("../img/dark-insta-icon.png");
   }
 
   .sign-in-container .google-icon img {
-    content: url("../img/dark-google-icon.png");
+    content: url("../img/dark-git-icon.png");
   }
 
   .sign-in-container .linkedin-icon img {
@@ -437,11 +437,11 @@ body {
   }
 
   .sign-up-container .facebook-icon:hover img {
-    content: url("../img/facebook-icon.png");
+    content: url("../img/insta-icon.png");
   }
 
   .sign-up-container .google-icon:hover img {
-    content: url("../img/google-icon.png");
+    content: url("../img/git-icon.png");
   }
 
   .sign-up-container .linkedin-icon:hover img {

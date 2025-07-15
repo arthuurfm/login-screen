@@ -6,7 +6,7 @@ const loggedUser = sessionStorage.getItem('loggedUser');
 
 // se não logado, volta para a tela de login.
 if (!loggedUser) {
-  window.location.href = "./login.html";
+  window.location.href = "../../index.hmtl";
 }
 
 const user = JSON.parse(loggedUser);

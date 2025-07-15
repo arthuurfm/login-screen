@@ -7,6 +7,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 999;
 }
 
 .nav-bar {
@@ -42,7 +43,6 @@ header {
   border: 1px solid var(--bg-green);
   cursor: pointer;
   user-select: none;
-  z-index: 1;
 }
 
 .profile-icon:hover, .login-area:hover {
@@ -88,7 +88,7 @@ a {
   background-color: var(--bg-green-hover);
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 9999;
+  z-index: 999;
   overflow: hidden;
 }
 
@@ -104,7 +104,7 @@ a {
   background-color: #3db98e;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .explore-area span {
     font-size: 14px;
   }

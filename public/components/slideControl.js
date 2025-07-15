@@ -4,6 +4,8 @@ export default function slideControl() {
 
   const container = document.querySelector('.container');
 
+  const spanSignIn = document.querySelector('.sign-up-container span b');
+  const spanSignUp = document.querySelector('.sign-in-container span b');
   const formSignIn = document.querySelector('.sign-in-container');
   const formSignUp = document.querySelector('.sign-up-container');
   const welcomeSignIn = document.querySelector('.welcome-sign-in');
@@ -53,5 +55,31 @@ export default function slideControl() {
       welcomeSignIn.classList.remove('hidden');
       showSignUp();
     }, 450);
+  });
+
+  spanSignIn.addEventListener('click', () => {
+    container.classList.add('active');
+    formSignUp.classList.add('hidden');
+    welcomeSignUp.classList.add('hidden');
+    document.title = "Login";
+      
+    setTimeout(() => {
+      formSignUp.classList.remove('hidden');
+      welcomeSignUp.classList.remove('hidden');
+      showSignIn();
+    }, 300);
+});
+
+  spanSignUp.addEventListener('click', () => {
+    container.classList.remove('active');
+    formSignIn.classList.add('hidden');
+    welcomeSignIn.classList.add('hidden');
+    document.title = "Register";
+
+    setTimeout(() => {
+      formSignIn.classList.remove('hidden');
+      welcomeSignIn.classList.remove('hidden');
+      showSignUp();
+    }, 300);
   });
 }

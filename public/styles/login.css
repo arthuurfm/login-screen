@@ -132,6 +132,10 @@ body {
   user-select: none;
 }
 
+.form-container span {
+  display: none;
+}
+
 .show-password {
   opacity: 0;
   pointer-events: none;
@@ -307,4 +311,147 @@ body {
   width: 25px;
   height: 25px;
   background-color: #a94c4c;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .form-container {
+    transition: left .5s ease-in-out;
+  }
+
+  .form-container > * {
+    transition: opacity .1s ease-in-out;
+  }
+
+  .welcome-container {
+    transition: left .5s ease-in-out;
+  }
+
+  .welcome-container h1, .form-container h2 {
+    font-size: 36px;
+  }
+
+  .welcome-container p, .form-container p {
+    font-size: 16px;
+  }
+
+  .form-container .icons-area div {
+    width: 40px;
+    height: 40px;
+  }
+
+  .form-container .icons-area div img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .welcome-container button, .form-container button {
+    font-size: 14px;
+  }
+
+  .form-container .input-area {
+    width: 250px;
+    height: 35px;
+  }
+
+  .form-container .input-area input {
+    font-size: 14px;
+  }
+
+  .form-container .input-area input::placeholder {
+    font-size: 14px;
+  }
+
+  .form-container .input-area img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    display: none;
+  }
+
+  .form-container {
+    width: 100%;
+    left: 0;
+  }
+
+  .form-container h2 {
+    font-size: 32px;
+  }
+
+  .form-container p {
+    font-size: 14px;
+  }
+
+  .form-container .icons-area div {
+    width: 35px;
+    height: 35px;
+  }
+
+  .form-container .icons-area div img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .form-container .input-area {
+    width: 200px;
+    height: 30px;
+  }
+
+  .form-container .input-area input {
+    font-size: 14px;
+  }
+
+  .form-container .input-area input::placeholder {
+    font-size: 14px;
+  }
+
+  .form-container .input-area img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .form-container button {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .form-container span {
+    display: block;
+    font-size: 14px;
+  }
+
+  .form-container span b {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* no login é outro estilo */
+  .sign-in-container {
+    background-color: var(--bg-green);
+    color: var(--text-black);
+  }
+
+  .sign-in-container::selection {
+    background-color: var(--bg-black);
+    color: var(--text-green);
+  }
+
+  .sign-in-container .input-area:focus-within {
+    border: 1px solid #121212;
+  }
+
+  .sign-in-container button {
+    border: 2px solid var(--bg-black);
+  }
+
+  .sign-in-container .icons-area div {
+    border: 1px solid var(--bg-black)
+  }
+
+  .sign-in-container .icons-area div:hover {
+    background-color: var(--bg-black);
+  }
 }

@@ -135,7 +135,7 @@ body::selection {
   }
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) and (min-width: 769px) {
   .profile-area-mobile {
     display: none;
   }
@@ -174,7 +174,7 @@ body::selection {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .banner-container {
     width: 90%;
     flex-direction: row;
@@ -213,6 +213,7 @@ body::selection {
     border-radius: 100%;
     border: 3px solid var(--bg-black);
     object-fit: cover;
+    z-index: 1;
   }
 
   .profile-area-mobile .profile-info {

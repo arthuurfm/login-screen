@@ -67,7 +67,7 @@ export default function slideControl() {
       formSignUp.classList.remove('hidden');
       welcomeSignUp.classList.remove('hidden');
       showSignIn();
-    }, 300);
+    }, 450);
 });
 
   spanSignUp.addEventListener('click', () => {
@@ -80,6 +80,6 @@ export default function slideControl() {
       formSignIn.classList.remove('hidden');
       welcomeSignIn.classList.remove('hidden');
       showSignUp();
-    }, 300);
+    }, 450);
   });
 }

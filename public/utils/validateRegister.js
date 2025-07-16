@@ -21,10 +21,10 @@ export default function validateRegister() {
   // limpa o formulário ao fazer o slide.
   const clearForm = () => {
     const inputArea = document.querySelectorAll('.input-area');
-    const inputError = document.querySelectorAll('.input-error');
+    const errors = document.querySelectorAll('.error');
 
     inputArea.forEach(i => i.classList.remove('invalid'));
-    inputError.forEach(i => i.classList.remove('error'));
+    errors.forEach(e => e.remove());
     inputs.forEach(i => i.value = "");
   }
   

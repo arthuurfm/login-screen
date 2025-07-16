@@ -18,8 +18,10 @@ export default function validateLogin() {
   const clearForm = () => {
     const inputArea = document.querySelectorAll('.input-area');
     const inputs = document.querySelectorAll('.input-area input');
+    const errors = document.querySelectorAll('.error');
 
     inputArea.forEach(i => i.classList.remove('invalid'));
+    errors.forEach(e => e.remove());
     inputs.forEach(i => i.value = "");
   }
 

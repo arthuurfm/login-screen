@@ -144,8 +144,13 @@ body {
   content: url("../img/dark-linkedin-icon.png");
 }
 
-.form-container span {
+.form-container .welcome-mobile {
   display: none;
+}
+
+.error {
+  color: #c53535;
+  font-size: 14px;
 }
 
 .show-password {
@@ -176,7 +181,7 @@ body {
 .form-container .input-area {
   position: relative;
   border: solid 1px transparent;
-  margin-bottom: 12px;
+  margin: 6px 0;
   width: 300px;
   height: 40px;
   border-radius: 12px;
@@ -369,6 +374,10 @@ body {
     height: 30px;
   }
 
+  .form-container .error {
+    font-size: 12px;
+  }
+
   .form-container .input-area input {
     font-size: 14px;
   }
@@ -387,7 +396,7 @@ body {
     margin-bottom: 12px;
   }
 
-  .form-container span {
+  .form-container .welcome-mobile {
     display: block;
     font-size: 14px;
   }
@@ -410,6 +419,10 @@ body {
 
   .sign-in-container .input-area:focus-within {
     border: 1px solid #121212;
+  }
+
+  .sign-in-container .error {
+    color: #7d2b2b;
   }
 
   .sign-in-container button {

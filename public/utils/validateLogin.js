@@ -1,4 +1,5 @@
 import users from './users.js';
+import newError from './newError.js';
 
 export default function validateLogin() {
   const signUpSlide = document.querySelector('.sign-up-btn');
@@ -37,32 +38,40 @@ export default function validateLogin() {
   const isRegisteredEmail = () => {
     const user = users.find(user => user.email === email.value);
     inputEmail.classList.add('invalid');
+    newError(inputEmail);
 
     if (email.value == "") {
+      newError(inputEmail).textContent = "Can't be empty.";
       return false;
     }
 
     if (!user) {
+      newError(inputEmail).textContent = "Invalid email.";
       return false;
     }
 
     inputEmail.classList.remove('invalid');
+    newError(inputEmail).remove();
     return true;
   }
 
   const isRegisteredPassword = () => {
     const user = users.find(user => user.email === email.value);
     inputPassword.classList.add('invalid');
+    newError(inputPassword);
 
     if (password.value == "") {
+      newError(inputPassword).textContent = "Can't be empty.";
       return false;
     }
 
     if (!user || user.password != password.value) {
+      newError(inputPassword).textContent = "Invalid password.";
       return false;
     }
 
     inputPassword.classList.remove('invalid');
+    newError(inputPassword).remove();
     return true;
   }
 

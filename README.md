@@ -1,4 +1,3 @@
-```
 # Description
 An example of a login screen and the profile design when logging in.
 ## Coded in:
@@ -7,4 +6,3 @@ An example of a login screen and the profile design when logging in.
 * Pure JavaScript
 ## Coded by:
 ### Arthur
-```
